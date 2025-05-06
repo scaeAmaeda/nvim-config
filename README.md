@@ -1,9 +1,11 @@
 # nvim-config
 (windows)
+(nvim-data2.zip incomplete cause i cannot host it all here)
 
 ## Step 1
 - create nvim in AppData/Local
-- create init.lua in AppData/Local/nvim
+- paste all in nvim in AppData/Local/nvim
+- paste nvim-data in AppData/Local (all juicy content of the pluggins i cannot download)
 
 ## Step 2
 ```bat
@@ -14,4 +16,7 @@ npm install -g typescript typescript-language-server vscode-langservers-extracte
 ```
 
 ## Step 3 (to check)
-cloner nvim-data
+```bat
+nvim
+```
+- then :q if no update
