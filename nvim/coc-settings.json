@@ -1,0 +1,13 @@
+{
+  "languageserver": {
+    "csharp": {
+      "command": "dotnet",
+      "args": [
+        "PATHTOREPLACEOmniSharp.dll",
+        "--languageserver"
+      ],
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.sln"]
+    }
+  }
+}
