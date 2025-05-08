@@ -20,3 +20,11 @@ npm install -g typescript typescript-language-server vscode-langservers-extracte
 nvim
 ```
 - then :q if no update
+
+## Step 4
+- dowload a font
+- install it and change power shell police
+
+## For Tibi when he is jalous of my speed
+- download omnisharp 64 and add it to the path, then change path of it in init.lua
+- enjoy autocomplete :)
