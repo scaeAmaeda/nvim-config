@@ -22,7 +22,7 @@ nvim
 - then :q if no update
 
 ## Step 4
-- dowload a font
+- dowload a font (https://www.nerdfonts.com/font-downloads)
 - install it and change power shell police
 
 ## For Tibi when he is jalous of my speed
