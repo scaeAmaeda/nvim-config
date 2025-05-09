@@ -2,7 +2,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy:map <leader>ff.nvim.git", "--branch=stable", lazypath })
+    "https://github.com/folke/lazy.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -14,6 +14,7 @@ require("lazy").setup({
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
@@ -75,7 +76,12 @@ require("lazy").setup({
       shell = vim.o.shell,
     })
   end,
-  }
+  },
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+    build = "npm ci",
+  },
 })
 
 -- Définition du leader avant tout mapping
@@ -136,6 +142,7 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'path' },
   },
 })
 
@@ -151,6 +158,8 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: find files" })
 keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: live grep" })
 keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope: buffers" })
+keymap.set("n", "<leader>d", ":Telescope diagnostics<CR>", { noremap = true, silent = true })
 -- (ici le folder de gauche plutôt)
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
+-- (ici le terminal integre)
 keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "🖥️ Terminal toggle" })
